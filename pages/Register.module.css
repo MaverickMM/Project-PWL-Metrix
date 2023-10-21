@@ -69,6 +69,7 @@
     /* Adjust size as needed */
     width: 80%; 
     height: auto; 
+    margin-top: 60px;
 }
 
 .logoText {
