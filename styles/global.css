@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("/fonts/SFProText-Regular.otf") format("opentype");
+  }
+  
+  body {
+    font-family: "SF Pro Text", sans-serif;
+  }

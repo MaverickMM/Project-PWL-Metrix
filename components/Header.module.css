@@ -7,15 +7,26 @@
 }
 
 .logo {
-    height: 50px; /* Adjust as needed */
-}
-
-.nav {
-    display: flex;
-    gap: 20px; /* Space between items */
+    height: 25px; /* Adjust as needed */
+    margin-right: 10px; /* Adds space to right of logo */
 }
 
 .searchBar {
    height: 30px; 
    width: 200px; 
 }
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between items */
+}
+
+.link {
+  cursor: pointer;
+  margin-left: 10px; /* Add some space between links */
+}
+  
+.active {
+    font-weight: bold;
+  }
