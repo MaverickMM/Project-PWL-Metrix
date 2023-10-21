@@ -9,9 +9,9 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <div>
+            <div className={styles.logoAndNav}>
+                <img src="/images/logo.png" alt="Logo" className={styles.logo} />
                 <nav className={styles.nav}>
-                    <img src="/images/logo.png" alt="Logo" className={styles.logo} />
                     <Link href="/">
                         <span className={classNames(styles.link, { [styles.active]: router.pathname === '/' })}>Home</span>
                     </Link>
@@ -24,9 +24,10 @@ const Header = () => {
                     <Link href="/detectsong">
                         <span className={classNames(styles.link, { [styles.active]: router.pathname === '/detectsong' })}>Detect Song</span>
                     </Link>                    
-                </nav>
-            </div>
-            <input type="text" placeholder="Search..." className={styles.searchBar} />
+                </nav>  
+            </div> 
+            {/* Move search bar out of nav */}
+            <input type="text" placeholder="Search..." className={styles.searchBar} />   
         </header>
     );
 };

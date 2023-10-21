@@ -6,3 +6,11 @@
   body {
     font-family: "SF Pro Text", sans-serif;
   }
+
+a {
+    text-decoration: none !important;
+}
+
+body {
+    background-color: #2A2438; /* Changes background color to purple */
+}
