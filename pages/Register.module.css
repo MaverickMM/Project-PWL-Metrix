@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    height: 100vh; /* ensure it takes up full viewport height */
+  }
+  
+  .leftSide {
+    flex-basis: 50%;
+  }
+  
+  .rightSide {
+      flex-basis:50%;
+      display:flex;
+      justify-content:flex-start; 
+      align-items:center; /* aligns items vertically */
+      background-color: white;
+  }
+  
+  #registrationForm{
+       width: 90%;
+  }
+  
+
+.welcomeText {
+    margin-bottom: 10px; /* adjust as needed */
+    font-weight: normal;
+}
+
+.registerText {
+    margin-top: 0; /* adjust as needed */
+    margin-bottom: 30px; /* add space below the text */
+    font-weight: bold;
+}
+.inputField {
+    font-size: 20px; /* adjust as needed */
+    margin-bottom: 20px; /* adjust as needed */
+    width: 100%; /* adjust as needed */
+    height: 40px; /* adjust as needed */
+    border-radius:5px;
+    border: 1px solid #000000;
+    padding-left: 20px;
+    box-sizing:border-box;
+}
+
+.submitButton {
+     font-size: 20px; /* adjust as needed */
+     margin-top: 20px; /* adjust as needed */
+     width: 100%; /* adjust as needed */
+     height: 40px; /* adjust as needed */
+     color:white;
+     background-color:#00B240;
+     border-radius:5px;
+     border:none;
+}
+
+.formContainer {
+    width: 90%; /* adjust as needed */
+    margin: auto; /* centers the element horizontally */
+  }
+
+
+.leftSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    /* Adjust size as needed */
+    width: 80%; 
+    height: auto; 
+}
+
+.logoText {
+  /* Style as needed */
+  font-size: 40px;
+  color: #ffffff; 
+}

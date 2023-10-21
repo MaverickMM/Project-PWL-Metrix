@@ -22,3 +22,9 @@ body {
     border-radius: 50px; /* Half of width and height */
     text-align: center;
   }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
