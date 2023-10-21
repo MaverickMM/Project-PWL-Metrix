@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#ffffff; /* White */
+}
+
+.dropzone {
+   display:flex;
+   justify-content :center; 
+   align-items:center; 
+   width :100vw;; /* Adjust as needed */
+   height :250px; /* Adjust as needed */
+   background-color:#9681EB ; /* Purple */
+}
+  
+.title{
+  margin-bottom :20px;
+}
+  
+.buttonBase{
+  padding :10px;
+  border:none ;
+  color:#9681EB ;
+  text-align:center ;
+  font-size :18px ;
+  transition-duration :0.4s ;
+  cursor:pointer ;
+
+/* Added margin to create distance between elements */
+margin-right:20px ; 
+margin-left:20px ;
+
+}
+
+.detectButton{
+ /* other styles */
+ width:100px ;  
+ height:100px ; 
+ border-radius:50% ;
+}
+
+.selectButton{
+ background-color:#ffffff ; /* White */
+ height:auto ; 
+ width:auto ; 
+ border-radius:5px; 
+}
+
+.buttonBase:hover,
+.detectButton:hover {
+ background-color:#f8f9fa ; /* Slightly darker shade of white when hovered */
+}
+
+.orText { margin-right:50px; margin-left:50px;} /* Added margin to create distance between elements */
+
+.recordingIcon {
+    width: 45%;
+    height: auto;
+}
+
+.spacing {
+    margin-bottom: 60px; /* Adjust this value as needed */
+}

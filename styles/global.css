@@ -14,3 +14,11 @@ a {
 body {
     background-color: #2A2438; /* Changes background color to purple */
 }
+
+.btn-circle {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 50px; /* Half of width and height */
+    text-align: center;
+  }
