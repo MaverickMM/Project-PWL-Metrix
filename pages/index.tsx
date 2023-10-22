@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Card from '../components/Card';
 import '../styles/global.css';
-import '../styles/card.css';
+// import '../styles/card.css';
 
 const HomePage = () => {
     const cards = [
