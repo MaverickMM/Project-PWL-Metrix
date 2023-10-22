@@ -29,4 +29,19 @@ h1{
   width: auto;
   padding-left: 20px;
   padding-right: 20px;
+
+}
+
+.btn-circle {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 50px; /* Half of width and height */
+    text-align: center;
+  }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
