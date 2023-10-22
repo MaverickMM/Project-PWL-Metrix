@@ -24,24 +24,6 @@ const MusicDiscoveryPage: React.FC = () => {
             <div className={styles.theMostTrending}>
                 The most trending tracks in Indonesia this week
             </div>
-            <div className={styles.topnavIconButtonParent}>
-                <div className={styles.topnavIconButton}>
-                <div className={styles.icon}>
-                    <img className={styles.iconArrowLeft}
-                    alt=""
-                    src="/Images/Icon-Arrow-Left.svg"
-                    />
-                </div>
-                </div>
-                <div className={styles.topnavIconButton1}>
-                <div className={styles.icon}>
-                    <img className={styles.iconArrowLeft}
-                    alt=""
-                    src="/Images/Icon-Arrow-Left.svg"
-                    />
-                </div>
-                </div>
-            </div>
             </div>
         </div>
         </div>
