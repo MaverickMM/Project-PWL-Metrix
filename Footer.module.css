@@ -1,0 +1,20 @@
+.copyright {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .copyrightContainer {
+    position: absolute;
+    top: -1;
+    left: 0;
+    letter-spacing: 0.01em;
+    color: white;
+    width: 1200px;
+  }
+
+  .footer {
+    position: absolute;
+    left: 0;
+    height: 95px;
+    text-align: center;
+  }
