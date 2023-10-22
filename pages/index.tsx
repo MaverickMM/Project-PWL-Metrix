@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from '../components/Header';
 import Card from '../components/Card';
+import Footer from '@/components/Footer';
 import '../styles/global.css';
-// import '../styles/card.css';
+import '../styles/card.css';
 
 const HomePage = () => {
     const cards = [
@@ -57,6 +58,59 @@ const HomePage = () => {
           thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/en/b/b1/Rema_-_Calm_Down.png',
         },
       ];
+
+      const cards3 = [
+        {
+          title: 'As the World Caves In',
+          description: 'Sarah Cothran',
+          thumbnailUrl: 'https://i.scdn.co/image/ab67616d0000b2738b065a7bfff7655a18bc18ed',
+        },
+        {
+          title: 'Satu-Satu',
+          description: 'Idgitaf',
+          thumbnailUrl: 'https://cloud.jpnn.com/photo/arsip/normal/2023/07/27/penyanyi-idgitaf-alias-gita-foto-dok-idgitaf-musik-qhlzi-bhle.jpg',
+        },
+        {
+          title: "Somebody's Pleasure",
+          description: 'Aziz Hedra',
+          thumbnailUrl: 'https://i.scdn.co/image/ab67616d0000b2730104b1f71c7bd8e6e5ea1fd2',
+        },
+        {
+          title: 'Moonlight',
+          description: 'Kali Uchis',
+          thumbnailUrl: 'https://images.genius.com/2eb9ce93a389499c7600486814b661c0.1000x1000x1.png',
+        },
+        {
+          title: 'Rayuan Perempuan Gila',
+          description: 'Nadin Amizah',
+          thumbnailUrl: 'https://i.scdn.co/image/ab67616d0000b2739bbf0358fb086f43ffde5148',
+        },
+        {
+          title: 'Popular (feat. Playboi Carti)',
+          description: 'The Weeknd & Madonna',
+          thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Zanaka_Cover.jpg/220px-Zanaka_Cover.jpg',
+        },
+        {
+          title: '(It Goes Like) Nanana (Edit)',
+          description: 'Peggy Gou',
+          thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/en/7/75/Peggy_Gou_-_%28It_Goes_Like%29_Nanana.png',
+        },
+        {
+          title: 'Jiwa Yang Bersedih',
+          description: 'Ghea Indrawari',
+          thumbnailUrl: 'https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/1f/ac/00/1fac0025-c5a5-2c4a-0fd5-a10fb1db003c/cover.jpg/1200x1200bf-60.jpg',
+        },
+        {
+          title: 'Tattoo',
+          description: 'Loreen',
+          thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/en/c/c2/Loreen_-_Tattoo.png',
+        },
+        {
+          title: 'Paint The Town Red',
+          description: 'Doja Cat',
+          thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/en/5/53/Doja_Cat_-_Paint_the_Town_Red.png',
+        },
+      ];
     
       return (
         <div>
@@ -75,7 +129,7 @@ const HomePage = () => {
             </div>
             <h1></h1>
             <div className="card-container">
-              {cards.map((card, index) => (
+              {cards3.map((card, index) => (
                 <Card
                   key={index}
                   title={card.title}
@@ -85,6 +139,7 @@ const HomePage = () => {
               ))}
             </div>
           </main>
+          <Footer/>
         </div>
       );
 };
