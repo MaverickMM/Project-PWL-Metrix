@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import styles from './Login.module.css';
-import '../public/styles/global.css';
+import '../styles/global.css';
 import Image from 'next/image';
 import logo from '../public/Images/logo.png';
 
