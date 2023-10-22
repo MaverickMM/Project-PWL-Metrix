@@ -1,0 +1,200 @@
+  .theMostTrending {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    line-height: 24px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .iconArrowLeft {
+    align-self: stretch;
+    flex: 1;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  .icon {
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .topnavIconButton,
+  .topnavIconButton1 {
+    border-radius: var(--br-980xl);
+    background-color: var(--color-gray-100);
+    border: 1px solid var(--actionborder);
+    box-sizing: border-box;
+    width: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-9xs);
+  }
+  .topnavIconButton {
+    opacity: 0.6;
+  }
+  .topnavIconButton1 {
+    transform: rotate(-180deg);
+    transform-origin: 0 0;
+  }
+  .topnavIconButtonParent {
+    position: absolute;
+    top: 8px;
+    left: 1329px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+  .top {
+    position: relative;
+    width: 1385px;
+    height: 38px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .imageThumbIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 202px;
+    object-fit: cover;
+  }
+  .containerCard {
+    position: relative;
+    border-radius: var(--br-10xs);
+    background-color: var(--fgdefault);
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .titleThumb {
+    line-height: 20px;
+    text-decoration: none;
+    color: white;
+  }
+  .authorThumb,
+  .labelThumb,
+  .titleThumb {
+    position: relative;
+    font-size: 14px;
+  }
+  .authorThumb {
+    line-height: 20px;
+    text-decoration: none;
+    color: gray;
+  }
+  .contentCard,
+  .thumbnail {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--gap-9xs);
+  }
+  .thumbnail {
+    width: 200px;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    gap: var(--gap-base);
+  }
+
+  .container,
+  .content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .container {
+    width: 1401px;
+    overflow-x: auto;
+    flex-direction: row;
+    gap: 24px;
+  }
+  
+  .content {
+    position: absolute;
+    top: 447px;
+    left: 38px;
+    flex-direction: column;
+    gap: 22px;
+  }
+  
+  .copyright {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .copyrightContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: 0.01em;
+    color: white;
+    width: 1440px;
+  }
+
+  .footer {
+    position: absolute;
+    left: 0;
+    width: 1440px;
+    height: 95px;
+    text-align: center;
+  }
+
+  .indonesia,
+  .vectorIcon {
+    position: relative;
+  }
+
+  .vectorIcon {
+    width: 22.5px;
+    height: 13.89px;
+    cursor: pointer;
+  }
+
+  .indonesiaParent {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    background-color: var(--purple);
+    width: 80px;
+    height: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 250px;
+  }
+  
+  .rectangleParent {
+    position: relative;
+    width: 380px;
+    height: 50px;
+    font-size: var(--font-size-base);
+    font-family: var(--font-manrope);
+  }
+
+  .discover1 {
+    position: relative;
+    background-color: var(--dark-grey);
+    width: 100%;
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: var(--font-size-base);
+    color: var(--white);
+  }
