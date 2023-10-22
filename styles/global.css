@@ -14,3 +14,18 @@ a {
 body {
     background-color: #2A2438; /* Changes background color to purple */
 }
+
+h1{
+  color: #ffffff;
+  padding: 20px;
+}
+
+.card-container {
+  white-space: nowrap;
+  overflow-x: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  width: auto;
+  padding-left: 20px;
+}

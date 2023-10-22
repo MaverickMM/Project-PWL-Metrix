@@ -4,7 +4,7 @@ import Card from '../components/Card';
 import '../styles/global.css';
 import '../styles/card.css';
 
-const HomePage = () => {
+const TopSongs = () => {
     const cards = [
         {
           title: 'Paint The Town Red',
@@ -62,7 +62,7 @@ const HomePage = () => {
         <div>
           <Header />
           <main>
-            <h1>Browse</h1>
+            <h1>Top Songs</h1>
             <div className="card-container">
               {cards.map((card, index) => (
                 <Card
@@ -89,4 +89,4 @@ const HomePage = () => {
       );
 };
 
-export default HomePage;
+export default TopSongs;

@@ -1,0 +1,37 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 10px;
+    display: inline-block;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: auto;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .card-thumbnail {
+    width: 400px;
+    overflow: hidden;
+  }
+
+  .card-thumbnail img {
+    max-width: 100%; /* Make the image fill its container */
+    max-height: auto; /* Maintain the image's aspect ratio */
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding-top: 10px;
+  }
+  
+  .card h2 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #555;
+  }  
