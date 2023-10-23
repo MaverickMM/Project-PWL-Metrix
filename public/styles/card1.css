@@ -38,6 +38,7 @@
      .song-title {
       color: white;
       font-size: 14px; 
+      margin-bottom: 0;
      }
         
      .song-description {
