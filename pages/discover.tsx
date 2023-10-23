@@ -4,13 +4,12 @@ import Footer from '../components/Footer';
 import dynamic from 'next/dynamic';
 import '../public/styles/global.css';
 import '../public/styles/card1.css';
-import Dropdown from './Dropdown';
 
 // Dynamically import Card with SSR disabled
 const Card = dynamic(() => import('../components/CardDiscover'), { ssr: false });
 
 const Discover = () => {
-  const cardData = [
+      const cardData = [
     {
         song_title: 'As the World Caves In',
         song_description: 'Sarah Cothran',
@@ -67,9 +66,9 @@ const Discover = () => {
         <div>
             <Header />
             <main>
-                <h3 className='title'>The most trending tracks in Indonesia this week</h3>
-
                 <br/>
+                <hr></hr>
+                <h3 className='title'>The most trending tracks in Indonesia this week</h3>
                 <br/>
                
                 {/* Pass the cardData object as props */}
