@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import '../styles/global.css';
 import styles from './DetectSong.module.css';
 
@@ -95,8 +96,13 @@ const DetectSong = () => {
                     style={{ display:'none' }} // Hide the default input field
                   />
                  </div>
-	         </div>
-	     </div>);
+		</div>
+		<br/>
+             	<br/>
+             	<br/>
+		<Footer />
+	     </div>
+	);
 };
 
 export default DetectSong;
