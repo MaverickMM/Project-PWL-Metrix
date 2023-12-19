@@ -1,90 +1,128 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import dynamic from 'next/dynamic';
+import axios from 'axios';
 import '../public/styles/global.css';
 import '../public/styles/card1.css';
 
 // Dynamically import Card with SSR disabled
 const Card = dynamic(() => import('../components/CardDiscover'), { ssr: false });
 
+interface CardData {
+  song_title: string;
+  song_description: string;
+  imageUrl: string;
+}
+
+interface Country {
+  id: string;
+  name: string;
+  listid: string;
+}
+
 const Discover = () => {
-      const cardData = [
-    {
-        song_title: 'As the World Caves In',
-        song_description: 'Sarah Cothran',
-        imageUrl: '/Images/As The World Caves In.jpg',
-    },
-    {
-        song_title: '(It Goes Like) Nanana',
-        song_description: 'Peggy Gou',
-        imageUrl: '/Images/(It Goes Like) Nanana.jpg',
-    },
-    {
-        song_title: 'Jiwa Yang Bersedih',
-        song_description: 'Ghea Indrawari',
-        imageUrl: '/Images/Jiwa yang Bersedih.jpg',
-    },
-    {
-        song_title: 'Tattoo',
-        song_description: 'Loreen',
-        imageUrl: '/Images/Tatto.png',
-    },
-    {
-        song_title: 'Satu-Satu',
-        song_description: 'Idgitaf',
-        imageUrl: '/Images/Satu-Satu.jpg',
-    },
-    {
-        song_title: 'Moonlight',
-        song_description: 'Kali Uchis',
-        imageUrl: '/Images/Moonlight.png',
-    },
-    {
-        song_title: 'Somebodys Pleasure',
-        song_description: 'Aziz Hedra',
-        imageUrl: '/Images/Somebodys Pleasure.jpg',
-    },
-    {
-        song_title: 'Rayuan Perempuan Gila',
-        song_description: 'Nadin Amizah',
-        imageUrl: '/Images/Rayuan Perempuan Gila.jpg',
-    },
-    {
-        song_title: 'Popular (feat. Playboi Carti)',
-        song_description: 'The Weeknd & Madonna',
-        imageUrl: '/Images/Popular.jpg',
-    },
-    {
-        song_title: ' Paint The Town Red',
-        song_description: 'Doja Cat',
-        imageUrl: '/Images/Paint the Town Red.jpg',
-    },
-];
+  const [cardData, setCardData] = useState<CardData[]>([]);
+  const [selectedCountry, setSelectedCountry] = useState<string>('ID'); // Default to Indonesia
+  const [countries, setCountries] = useState<Country[]>([]);
+  const [selectedCountryName, setSelectedCountryName] = useState<string>(''); // To store the selected country name
+
+  useEffect(() => {
+    const fetchCountryData = async () => {
+      try {
+        const response = await axios.get('https://shazam.p.rapidapi.com/charts/list', {
+          headers: {
+            'X-RapidAPI-Key': '5a1efbbdf3mshb7909fe3d931d6ap17410fjsn9540b090d835',
+            'X-RapidAPI-Host': 'shazam.p.rapidapi.com',
+          },
+        });
+
+        const countriesData = response.data.countries || [];
+        setCountries(countriesData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchCountryData();
+  }, []);
+
+  useEffect(() => {
+    const fetchShazamData = async () => {
+      try {
+        const response = await axios.get(`https://shazam.p.rapidapi.com/charts/track`, {
+          params: {
+            locale: 'en-EN',
+            listId: selectedCountry,
+            pageSize: '10', // Adjust the pageSize as needed
+            startFrom: '0',
+          },
+          headers: {
+            'X-RapidAPI-Key': '5a1efbbdf3mshb7909fe3d931d6ap17410fjsn9540b090d835',
+            'X-RapidAPI-Host': 'shazam.p.rapidapi.com',
+          },
+        });
+
+        const tracks = response.data.tracks || [];
+        const topSongs: CardData[] = tracks.map((track: any) => ({
+          song_title: track.title,
+          song_description: track.subtitle,
+          imageUrl: track.images.coverart,
+        }));
+        setCardData(topSongs);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchShazamData();
+  }, [selectedCountry]);
+
+  const handleCountryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedCountryId = event.target.value;
+    setSelectedCountry(selectedCountryId);
+
+    // Find and set the selected country name based on the selected country id
+    const country = countries.find((c) => c.listid === selectedCountryId);
+    if (country) {
+      setSelectedCountryName(country.name);
+    }
+  };
 
   return (
-        <div>
-            <Header />
-            <main>
-                <br/>
-                <hr></hr>
-                <h3 className='title'>The most trending tracks in Indonesia this week</h3>
-                <br/>
-               
-                {/* Pass the cardData object as props */}
-                <div className="containerAll">
-                {cardData.map((card, index) => (
-                    <Card
-                        key={index}
-                        song_title={card.song_title} 
-                        song_description={card.song_description} 
-                        imageUrl={card.imageUrl} />
-                    ))}
-                </div>
-            </main>
-            <Footer />
+    <div>
+      <Header />
+      <main>
+        <br />
+        <hr></hr>
+        <h3 className='title'>The most trending tracks in {selectedCountryName} this week</h3>
+        <br />
+
+        {/* Country Selector */}
+        <label>Select Country: </label>
+        <select value={selectedCountry} onChange={handleCountryChange}>
+          {countries.map((country) => (
+            <option key={country.id} value={country.listid}>
+              {country.name}
+            </option>
+          ))}
+        </select>
+
+        {/* Display top songs using Card component */}
+        <div className="containerAll">
+          {cardData.map((card, index) => (
+            <Card
+              key={index}
+              song_title={card.song_title}
+              song_description={card.song_description}
+              imageUrl={card.imageUrl}
+            />
+          ))}
         </div>
-    );
+      </main>
+      <Footer />
+    </div>
+  );
 };
 
 export default Discover;
