@@ -1,14 +1,21 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import styles from './Login.module.css';
-import '../styles/global.css';
+import { useRouter } from 'next/router';
+import '../public/styles/global.css';
 import Image from 'next/image';
 import logo from '../public/Images/logo.png';
+import { getRegisteredCredentials } from '../pages/authority';
 
 const Login = () => {
+  const router = useRouter();
+  const registeredCredentials = getRegisteredCredentials();
+
   const [formData, setFormData] = useState({
     username: '',
     password: ''
   });
+
+  const [loginError, setLoginError] = useState<string | null>(null);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -17,11 +24,23 @@ const Login = () => {
     });
   };
 
+  const simulateLogin = () => {
+    const { username, password } = formData;
+
+    // Simulate a successful login without a real API
+    if (registeredCredentials && username === registeredCredentials.username && password === registeredCredentials.password) {
+      setLoginError(null);
+      console.log('Login successful');
+      router.push('/')
+      // You can redirect or perform other actions after successful login
+    } else {
+      setLoginError('Invalid username or password');
+    }
+  };
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-   // Here you would typically make a request to your server to authenticate the user
-   console.log(formData);
+    simulateLogin();
  };
 
  return (
@@ -56,9 +75,14 @@ const Login = () => {
                  	<input type="submit" value="Login"
                           className= { styles.submitButton }/>
                </form>
+               {loginError && <p className={styles.errorText}>{loginError}</p>}
+
+               {/* Include a link to your registration page */}
+      <p>Don't have an account? <a href="/register">Register here</a></p>
             </div>
         </div>
-     </div>);
+     </div>
+     );
 };
 
 export default Login;
