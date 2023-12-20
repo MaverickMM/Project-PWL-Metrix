@@ -33,8 +33,8 @@ const Discover = () => {
       try {
         const response = await axios.get('https://shazam.p.rapidapi.com/charts/list', {
           headers: {
-            'X-RapidAPI-Key': '5a1efbbdf3mshb7909fe3d931d6ap17410fjsn9540b090d835',
-            'X-RapidAPI-Host': 'shazam.p.rapidapi.com',
+            'X-RapidAPI-Key': rapidApiKey,
+            'X-RapidAPI-Host': rapidApiHost
           },
         });
 

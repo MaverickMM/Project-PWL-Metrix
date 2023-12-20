@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import Card from '../components/Card'; // Import the Card component
 import '../styles/global.css';
 import styles from './DetectSong.module.css';
-import '../styles/card.css';
+import '../styles/cardDetect.css';
 
 interface ReactMicProps {
   record: boolean;

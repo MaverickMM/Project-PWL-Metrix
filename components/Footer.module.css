@@ -1,23 +1,19 @@
+
+
+.content {
+  flex: 1;
+  /* Add additional styling for your content */
+}
+
 .copyright {
-    margin: 0;
-    font-size: 16px;
-  }
+  margin: 0;
+  font-size: 16px;
+}
 
-  .copyrightContainer {
-    top: 0;
-    left: 0;
-    letter-spacing: 0.01em;
-    color: white;
-    text-align: center;
-  }
-
-  .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px; /* Add padding as needed */
-    color: white;
-    text-align: center;
-  }
-  
+.footer {
+  padding: 10px;
+  text-align: center;
+  color: white;
+  margin-top: 100vh;
+  /* background-color: #333;  */
+}

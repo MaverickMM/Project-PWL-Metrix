@@ -1,4 +1,4 @@
-import { rapidApiKey, rapidApiHost } from '../apiConfig';
+const { rapidApiKey, rapidApiHost } = require('../apiConfigServer');
 
 const express = require('express');
 const fileUpload = require('express-fileupload');
@@ -49,8 +49,9 @@ app.post('/upload', async (req, res) => {
         locale: 'en-US',
       },
       headers: {
+        'content-type': 'text/plain',
         'X-RapidAPI-Key': rapidApiKey,
-        'X-RapidAPI-Host': rapidApiHost,
+        'X-RapidAPI-Host': rapidApiHost
       },
       data: base64Data, // Send the base64 data directly
     };
