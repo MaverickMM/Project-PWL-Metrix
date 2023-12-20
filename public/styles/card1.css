@@ -1,12 +1,39 @@
+.country {
+  width: 250px;
+  height: 40px; 
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  background-color: #9681EB;
+  cursor: pointer; 
+  margin-bottom: 80px;
+}
+
+.country-selector {
+  padding: 20px; 
+}
+
+.dropdown {
+  background-color: #1E1928;
+  color:white;
+}
+
+h3 {
+  padding: 20px;
+}
+
 .containerAll {
-      overflow-x: auto; /* Enables horizontal scrolling */
+      /* overflow-x: auto; Enables horizontal scrolling */
       gap: 20px; /* Space between cards */
       margin-bottom: 40px; /* Adds space below each row of cards. Adjust as needed. */
       display: flex;
+      overflow: hidden;
+      scroll-behavior: smooth;
     }
 
      .title {
-      color: white;
+      color: #ffffff;
      }
     
     .container {
@@ -45,3 +72,4 @@
       font-size :14px ; 
       color: gray;  
      }
+     
