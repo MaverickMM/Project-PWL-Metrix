@@ -1,3 +1,5 @@
+import { rapidApiKey, rapidApiHost } from '../apiConfig';
+
 const express = require('express');
 const fileUpload = require('express-fileupload');
 const axios = require('axios');
@@ -47,9 +49,8 @@ app.post('/upload', async (req, res) => {
         locale: 'en-US',
       },
       headers: {
-        'content-type': 'text/plain',
-        'X-RapidAPI-Key': '5a1efbbdf3mshb7909fe3d931d6ap17410fjsn9540b090d835', // Replace with your actual key
-        'X-RapidAPI-Host': 'shazam.p.rapidapi.com',
+        'X-RapidAPI-Key': rapidApiKey,
+        'X-RapidAPI-Host': rapidApiHost,
       },
       data: base64Data, // Send the base64 data directly
     };

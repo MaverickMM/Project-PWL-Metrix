@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import axios from 'axios';
 import '../public/styles/global.css';
 import '../public/styles/card1.css';
+import { rapidApiKey, rapidApiHost } from '../apiConfig';
 
 // Dynamically import Card with SSR disabled
 const Card = dynamic(() => import('../components/CardDiscover'), { ssr: false });
@@ -58,8 +59,8 @@ const Discover = () => {
             startFrom: '0',
           },
           headers: {
-            'X-RapidAPI-Key': '5a1efbbdf3mshb7909fe3d931d6ap17410fjsn9540b090d835',
-            'X-RapidAPI-Host': 'shazam.p.rapidapi.com',
+            'X-RapidAPI-Key': rapidApiKey,
+            'X-RapidAPI-Host': rapidApiHost
           },
         });
 

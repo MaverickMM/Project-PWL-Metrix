@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import axios from 'axios';
 import '../styles/global.css';
 import '../styles/card.css';
+import { rapidApiKey, rapidApiHost } from '../apiConfig';
 
 interface Song {
   title: string;
@@ -59,8 +60,8 @@ export async function getStaticProps() {
       listId: 'ip-city-chart-1642911'
     },
     headers: {
-      'X-RapidAPI-Key': '5a1efbbdf3mshb7909fe3d931d6ap17410fjsn9540b090d835',
-      'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+      'X-RapidAPI-Key': rapidApiKey,
+      'X-RapidAPI-Host': rapidApiHost
     }
   };
 

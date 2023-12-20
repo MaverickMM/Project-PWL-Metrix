@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import '../styles/global.css';
 import '../styles/card.css';
 import styles from '../styles/search.module.css';
+import { rapidApiKey, rapidApiHost } from '../apiConfig';
 
 
 interface SearchResult {
@@ -24,8 +25,8 @@ const Search: React.FC = () => {
     method: 'GET',
     url: 'https://shazam.p.rapidapi.com/search',
     headers: {
-      'X-RapidAPI-Key': '23dc7a4524mshd5b2461fce0e074p110c76jsn8c9eb8a3bdca',
-      'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+      'X-RapidAPI-Key': rapidApiKey,
+      'X-RapidAPI-Host': rapidApiHost,
     },
     params: {
       term: '',
