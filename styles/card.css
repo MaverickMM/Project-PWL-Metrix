@@ -1,8 +1,30 @@
+/* Hide the default scrollbar for WebKit browsers (Chrome, Safari, etc.) */
+.card-container::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    .card-container::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 6px;
+    }
+    
+    /* Hide the default scrollbar for Firefox */
+    .card-container {
+      scrollbar-width: thin;
+      scrollbar-color: #888 #f1f1f1;
+    }
+    
+    .card-container:hover::-webkit-scrollbar-thumb {
+      background-color: #555;
+    }
+    
+
 .card-container {
   display: flex;
   overflow-x: auto; /* Enables horizontal scrolling */
   gap: 30px; /* Space between cards */
   margin-bottom: 40px; /* Adds space below each row of cards. Adjust as needed. */
+  
 }
  
  .nav-buttons{

@@ -100,8 +100,8 @@ const Discover = () => {
         <br />
 
         {/* Country Selector */}
-        <label>Select Country: </label>
-        <select value={selectedCountry} onChange={handleCountryChange}>
+        <label className='title'>Select Country: </label>
+        <select className='customSelect' value={selectedCountry} onChange={handleCountryChange}>
           {countries.map((country) => (
             <option key={country.id} value={country.listid}>
               {country.name}
