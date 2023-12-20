@@ -20,26 +20,35 @@
    gap: 10px; /* Space between items */
 }
 
-.searchBar {
-    height: 30px; 
-    width: 200px;
-    padding: 5px;
-    border-radius: 5px; /* Adjusts rounding - smaller value for less rounding */
-    border: none; /* Removes default border */
-    outline: none; /* Removes focus outline */
-    background-color: #9681EB; /* Changes background color to purple */
-    color: white; /* Changes text color to white */
+.search-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 100vh; /* Use the full height of the viewport */
+ }
+ 
+ .searchBar {
+   height: 30px;
+   width: 200px;
+   padding: 5px;
+   border-radius: 5px;
+   border: none;
+   outline: none;
+   background-color: #9681EB;
+   color: white;
+   margin-bottom: 20px; /* Add margin to the bottom for spacing */
  }
  
  /* Change placeholder color to white */
  .searchBar::placeholder {
-     color: white;
-     opacity: 1; /* Firefox needs this to display the color properly */
+   color: white;
+   opacity: 1;
  }
  
- /* Optional - Style for when search bar is focused */
+ /* Optional - Style for when the search bar is focused */
  .searchBar:focus {
-     box-shadow: 0 0 5px rgba(81, 203, 238, 1); /* Adds a glow effect on focus */
+   box-shadow: 0 0 5px rgba(81, 203, 238, 1);
  }
 .link {
    cursor:pointer;

@@ -1,0 +1,39 @@
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Use the full height of the viewport */
+  }
+  
+
+  .searchBar {
+    height: 30px;
+    width: 50%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #9681EB;
+    color: white;
+    margin: auto; /* Center the element both horizontally and vertically */
+    display: block; /* Ensure the input is displayed as a block element */
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+  }
+
+  
+
+  /* Change placeholder color to white */
+  .searchBar::placeholder {
+    color: white;
+    opacity: 1;
+  }
+  
+  /* Optional - Style for when the search bar is focused */
+  .searchBar:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  }

@@ -26,8 +26,9 @@ const Header = () => {
                     </Link>                    
                 </nav>  
             </div> 
-            {/* Move search bar out of nav */}
-            <input type="text" placeholder="Search..." className={styles.searchBar} />   
+                <Link href="/Search">
+                    <span className={classNames(styles.link, { [styles.active]: router.pathname === '/Search' })}>Search</span>
+                </Link>    
         </header>
     );
 };
