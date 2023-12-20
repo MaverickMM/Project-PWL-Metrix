@@ -88,26 +88,29 @@ const Discover = () => {
       setSelectedCountryName(country.name);
     }
   };
-
-  return (
+  
+    return (
     <div>
       <Header />
       <main>
         <br />
+
+        {/* Country Selector */}
+        <div className="country-selector">
+          <select value={selectedCountry} onChange={handleCountryChange}
+          className="country">
+            {countries.map((country) => (
+              <option className="dropdown" key={country.id} value={country.listid}>
+                {country.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <hr></hr>
         <h3 className='title'>The most trending tracks in {selectedCountryName} this week</h3>
         <br />
-
-        {/* Country Selector */}
-        <label>Select Country: </label>
-        <select value={selectedCountry} onChange={handleCountryChange}>
-          {countries.map((country) => (
-            <option key={country.id} value={country.listid}>
-              {country.name}
-            </option>
-          ))}
-        </select>
-
+          
         {/* Display top songs using Card component */}
         <div className="containerAll">
           {cardData.map((card, index) => (
