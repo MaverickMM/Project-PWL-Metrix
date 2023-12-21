@@ -1,3 +1,12 @@
+.dropdown {
+  background-color: #1E1928;
+  color:white;
+}
+
+h3 {
+  padding: 20px;
+}
+
 .containerAll::-webkit-scrollbar {
   width: 5px;
 }
@@ -17,12 +26,12 @@
   background-color: #555;
 }
 
-
 .containerAll {
       overflow-x: auto; /* Enables horizontal scrolling */
       gap: 20px; /* Space between cards */
       margin-bottom: 40px; /* Adds space below each row of cards. Adjust as needed. */
       display: flex;
+      margin-left:20px;
     }
 
      .title {
@@ -72,17 +81,20 @@
     
     .customSelect {
       appearance: none;
-      padding: 10px;
       font-size: 16px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      width: 200px;
-      cursor: pointer;
+      width: 250px;
       outline: none;
-      background-color: white;
       background-image: url('data:image/svg+xml;utf8,<svg fill="%23343a40" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
       background-repeat: no-repeat;
       background-position: right 10px center;
+      height: 40px; 
+      color: white;
+      background-color: #9681EB;
+      cursor: pointer; 
+      margin-bottom: 80px;
+      margin-left:20px;
     }
     
     .customSelect:hover {
