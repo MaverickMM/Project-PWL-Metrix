@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import axios from 'axios';
 import '../public/styles/global.css';
 import '../public/styles/card1.css';
+import { rapidApiKey, rapidApiHost } from '../apiConfig';
 
 // Dynamically import Card with SSR disabled
 const Card = dynamic(() => import('../components/CardDiscover'), { ssr: false });
@@ -32,8 +33,8 @@ const Discover = () => {
       try {
         const response = await axios.get('https://shazam.p.rapidapi.com/charts/list', {
           headers: {
-            'X-RapidAPI-Key': '5a1efbbdf3mshb7909fe3d931d6ap17410fjsn9540b090d835',
-            'X-RapidAPI-Host': 'shazam.p.rapidapi.com',
+            'X-RapidAPI-Key': rapidApiKey,
+            'X-RapidAPI-Host': rapidApiHost
           },
         });
 
@@ -58,8 +59,8 @@ const Discover = () => {
             startFrom: '0',
           },
           headers: {
-            'X-RapidAPI-Key': '5a1efbbdf3mshb7909fe3d931d6ap17410fjsn9540b090d835',
-            'X-RapidAPI-Host': 'shazam.p.rapidapi.com',
+            'X-RapidAPI-Key': rapidApiKey,
+            'X-RapidAPI-Host': rapidApiHost
           },
         });
 
@@ -88,29 +89,28 @@ const Discover = () => {
       setSelectedCountryName(country.name);
     }
   };
-  
-    return (
+
+  return (
     <div>
       <Header />
       <main>
         <br />
-
+        
         {/* Country Selector */}
-        <div className="country-selector">
-          <select value={selectedCountry} onChange={handleCountryChange}
-          className="country">
-            {countries.map((country) => (
-              <option className="dropdown" key={country.id} value={country.listid}>
-                {country.name}
-              </option>
-            ))}
-          </select>
+        <div>
+        <select className='customSelect' value={selectedCountry} onChange={handleCountryChange}>
+          {countries.map((country) => (
+            <option className='dropdown' key={country.id} value={country.listid}>
+              {country.name}
+            </option>
+          ))}
+        </select>
         </div>
-
+        
         <hr></hr>
         <h3 className='title'>The most trending tracks in {selectedCountryName} this week</h3>
         <br />
-          
+
         {/* Display top songs using Card component */}
         <div className="containerAll">
           {cardData.map((card, index) => (
