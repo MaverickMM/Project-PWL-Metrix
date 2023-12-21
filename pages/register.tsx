@@ -1,15 +1,21 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import styles from './Register.module.css';
-import '../styles/global.css';
+import { useRouter } from 'next/router';
+import '../public/styles/global.css';
 import Image from 'next/image';
 import logo from '../public/Images/logo.png'; // Make sure this path is correct
+import { setRegisteredCredentials } from '../pages/authority';
 
 const Register = () => {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     username: '',
     password: '',
     confirmPassword: ''
   });
+
+  const [registrationError, setRegistrationError] = useState<string | null>(null);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -18,17 +24,26 @@ const Register = () => {
     });
   };
 
+  const simulateRegistration = () => {
+    const { username, password } = formData;
+    setRegistrationError(null);
+
+    // Simulate a successful registration without a real API
+    setRegisteredCredentials({ username, password });
+    console.log('Registration successful');
+
+    router.push('/login');
+  };
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    simulateRegistration();
     
    // Check if passwords match
    if (formData.password !== formData.confirmPassword) {
      alert('Passwords do not match');
      return;
    }
-
-   // Here you would typically make a request to your server to register the user
-   console.log(formData);
  };
 
  return (
@@ -72,6 +87,7 @@ const Register = () => {
                  	<input type="submit" value="Register"
                           className= { styles.submitButton }/>
                </form>
+               {registrationError && <p>{registrationError}</p>}
             </div>
         </div>
      </div>);
