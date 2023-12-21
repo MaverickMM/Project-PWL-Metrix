@@ -95,19 +95,21 @@ const Discover = () => {
       <Header />
       <main>
         <br />
-        <hr></hr>
-        <h3 className='title'>The most trending tracks in {selectedCountryName} this week</h3>
-        <br />
-
+        
         {/* Country Selector */}
-        <label className='title'>Select Country: </label>
+        <div>
         <select className='customSelect' value={selectedCountry} onChange={handleCountryChange}>
           {countries.map((country) => (
-            <option key={country.id} value={country.listid}>
+            <option className='dropdown' key={country.id} value={country.listid}>
               {country.name}
             </option>
           ))}
         </select>
+        </div>
+        
+        <hr></hr>
+        <h3 className='title'>The most trending tracks in {selectedCountryName} this week</h3>
+        <br />
 
         {/* Display top songs using Card component */}
         <div className="containerAll">
